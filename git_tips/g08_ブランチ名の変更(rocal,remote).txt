@@ -1,0 +1,12 @@
+﻿ブランチ名をhogeからfugaに変更する
+
+1.ローカルのブランチ名を変更する
+$ git branch -m hoge fuga
+※現在使用しているブランチ名を変更する場合は下記でOK
+$ git branch -m fuga
+
+2.リモートのブランチを削除
+$ git push origin :hoge
+
+3.ブランチ名を変更したローカルブランチをプッシュ
+$ git push origin fuga

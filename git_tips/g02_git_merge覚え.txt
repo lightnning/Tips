@@ -1,0 +1,15 @@
+git mergeの使い方
+
+例えば
+①master ブランチでファイルの内容を変更する
+②master branch で　add .　→　commit　→　push をする
+③remoto repository のmasterに反映される
+
+
+その変更内容をfeature branchにも反映させる場合
+①ブランチをfeatureに変える
+  checkout feature
+②mergeコマンドでmasterの内容をfatureにmergeする
+　git merge origin master
+③featureブランチからgit push origin featureをすると
+　remote のfeatureブランチも書き換わる

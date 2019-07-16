@@ -1,0 +1,15 @@
+﻿ルートディレクトリに移動
+git init 打ち込み
+git add -A  (-Aは-allと同じ意味)
+git commit -m メッセージ
+
+github上で新規リポジトリを作成
+＋　New repository
+Repository name 入力
+Description　入力
+
+コマンドプロンプトに移動
+git remote add origin [URL:リモートリポジトリ情報]
+
+ローカルリポジトリの内容をリモートリポジトリに反映する
+git push origin master

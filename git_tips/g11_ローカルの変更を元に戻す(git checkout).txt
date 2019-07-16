@@ -1,0 +1,3 @@
+﻿git checkout <filename>
+特定のファイルではなく、全て戻したい場合
+git checkout .
