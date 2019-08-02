@@ -1,0 +1,40 @@
+﻿
+全体の流れ
+１　ログをファイルに書き出す
+２　ログファイルの中身をメールする
+
+１．標準出力の内容をログファイルに書き出す
+
+例）１秒ごとにprint("Hello")と出力するコード
+
+import time
+while True:
+
+	print("Hello!")
+	time.sleep(1)
+
+*これをlogginモジュールを使って書き直すと
+
+import time
+from logging import getLogger,Formatter,StreamHandler,FileHandler,INFO
+
+logger = getLogger(__name__)
+handlerSh = StreamHandler()
+handlerFile = FileHandler("c:/Pydoc/helloBot.log") # ログファイルの出力先とファイル名を指定
+handlerSh.setLevel(INFO)
+handlerFile.setLevel(INFO)
+logger.setLevel(INFO)
+logger.addHandler(handlerSh)
+logger.addHandler(handlerFile)
+
+while True:
+
+	logger.info("Hello!")
+	time.sleep(1)
+
+
+○２行目から１０行目まで、「おまじない」
+○print("Hello") →　logger.info("Hello")
+
+◎コマンドラインに「Hello」が出力されると、同時に指定したフォルダにログファイルも出力される
+◎コマンドラインと同じ内容が、ログファイルにも出力される

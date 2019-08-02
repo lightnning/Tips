@@ -1,0 +1,12 @@
+﻿while文は「ある条件を満たす間(Trueの間）、指定の処理を繰り返す」
+
+○無限ループは必ずbreak（中断条件）とセットで使います
+
+例）
+num = 0
+
+while True:
+    print(num)
+    num += 1
+    if num == 6:
+        break

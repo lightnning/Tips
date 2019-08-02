@@ -1,0 +1,26 @@
+﻿try 〜 except文の基本的な使い方
+
+try:
+    # 処理１
+
+except #例外型 ：
+    # 処理２
+
+例）入力した数値が整数であればそのまま出力、整数でない場合は再度入力を促す動作をする
+
+while True:
+     try:                                           #(1)
+         n = int(input())
+     except ValueError:                             #(2)
+         print('enter again')
+     except KeyboardInterrupt:                      #(3)
+         print('end')
+         break
+     else:                                          #(4)
+         print('number {}'.format(n))
+         break
+
+○ひとつのtry節に対しexcept節を複数付けて別々の例外に対応することが可能。
+○else節を設けることが可能で、以下の特徴があります。
+　・try節で例外が全く送出されなかった場合に実行される
+　・全てのexcept節の後ろに置かれる
