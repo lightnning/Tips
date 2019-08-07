@@ -1,9 +1,1 @@
-﻿2つの場所
-①/etc/crontab
-  vi /etc/crontab
-
-
-
-②/var/spool/cron/[user]
-  crontab -e
-
+﻿
