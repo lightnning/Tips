@@ -2,4 +2,4 @@
 右上の緑色のボタン(Clone or download)のUse HTTPSを
 クリックすれば表示されるので、それをコピーする。
 
-git clone URL
+git clone [URL]
