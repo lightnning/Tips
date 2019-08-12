@@ -16,6 +16,7 @@ while True:
 *これをlogginモジュールを使って書き直すと
 
 import time
+
 from logging import getLogger,Formatter,StreamHandler,FileHandler,INFO
 
 logger = getLogger(__name__)
