@@ -9,5 +9,6 @@ git init
 git add -A  (-Aは-allと同じ意味)
 git commit -m "メッセージ"
 git remote add origin [URL:リモートリポジトリ情報]
-[ローカルリポジトリの内容をリモートリポジトリに反映する]
+//ローカルリポジトリの内容をリモートリポジトリに反映する
 git push origin master
+[username]、[password]を認証する
