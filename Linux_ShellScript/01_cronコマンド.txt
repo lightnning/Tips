@@ -2,8 +2,14 @@
 ①/etc/crontab
   vi /etc/crontab
 
-
-
 ②/var/spool/cron/[user]
   crontab -e
+
+設定
+分　時　日　月　曜日　<実行コマンド>
+固定指定
+0 15 * * * echo "hello."  #毎日15時
+間隔指定
+*/5 * * * * echo "hello." #5分毎
+
 
