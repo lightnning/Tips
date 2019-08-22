@@ -24,6 +24,10 @@ directory-a
 directory-a/ 
 
 # ワイルドカードの利用
+*.log
+*.csv
+*.json
+
 
 # 特定のファイルだけ追跡する
 
