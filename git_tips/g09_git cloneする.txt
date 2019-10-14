@@ -1,5 +1,6 @@
 ﻿URLは、GitHubのcloneしたいリポジトリページの
-右上の緑色のボタン(Clone or download)のUse HTTPSを
-クリックすれば表示されるので、それをコピーする。
+右上の緑色のボタン(Clone or download)を
+クリックする。
+urlが表示されるので、それをコピーする。
 
 git clone [URL]
