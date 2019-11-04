@@ -1,0 +1,76 @@
+# crontab -e
+      /etc/crontab
+      vi /etc/crontab
+
+      /var/spool/cron/[user]
+      crontab -e
+
+      設定
+      分　時　日　月　曜日　<実行コマンド>
+      固定指定
+      0 15 * * * echo "hello."  #毎日15時
+      間隔指定
+      */5 * * * * echo "hello." #5分毎
+
+      分　時　日　月　曜日　<command>
+      0 */3 * * * * command & path "3分毎に実行"
+      0 */6 * * *                "6時間毎に実行"
+      10 */6 * * *               "6時間毎に実行"(6:10,12:10,,,)
+      0 01-23/2 * * *            "奇数時に実行"
+      0 0-23/2 * * *            "偶数時に実行"
+      例）
+      00 06 * * * python /home/tkuser/NEM/mail_nem.py "毎日6時にmail_nem/pyを実行する
+
+# nohup コマンド &
+      例）
+      nohup python test.py &
+
+# rootログイン禁止設定
+      vi /etc/ssh/sshd_config
+      PermitRootLogin yes → PermitRootLogin no に変更
+
+# TeraTermで公開鍵認証
+      https://webkaru.net/linux/tera-term-ssh-login-public-key/
+
+      ローカル側
+      1.新しい接続→キャンセル
+      2.設定→SSH鍵生成
+      3.鍵の種類-RSA、ビット数-2048→生成
+      4.鍵のパスフレーズ→空でもOK
+      5.公開鍵の保存→任意のフォルダに保存
+      6.秘密鍵の保存→任意のフォルダに保存
+
+      リモート側
+      「公開鍵の設置」
+      1.新しい接続→SSH接続（パスワード認証）
+      2.作成した公開鍵ファイルをTeraTermにドラッグ&ドロップする
+      3.SCPでファイル転送を行う
+
+      ファイルを転送が完了したら、
+      コマンド操作で公開鍵を移動
+      （~/id_rsa.pub）
+      リネームする
+      （~/.ssh/authorized_keys）
+
+      $ pwd
+      /home/[ユーザー名]
+      $ ls
+      id_rsa.pub
+      $ mkdir .ssh　#既にできている場合もある
+      $ chmod 700 .ssh
+      $ mv id_rsa.pub .ssh/authorized_keys　#移動してリネーム
+      $ exit
+
+      確認
+      1.新しい接続
+      2.ユーザー名とパスフレーズ
+      3.「RSA/DSA鍵を使う」をクリックして、秘密鍵をクリックし
+      秘密鍵ファイルを選択し「OK」をクリックする。
+
+      
+      
+      
+      
+            
+
+

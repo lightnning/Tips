@@ -1,0 +1,15 @@
+﻿# apache起動
+sudo service httpd start
+# linux起動時にapacheも起動するようにする
+sudo chkconfig httpd on
+# git bashからAWSへリモートアクセスする(sshコマンド)
+ssh -i ~/.ssh/FirstKey.pem ec2-user@52.197.121.79
+(alias作成=sshaws)
+# SCPによるファイル転送
+# リモート⇒ローカル
+scp -i ~/.ssh/FirstKey.pem ec2-user@52.197.121.79:/var/www/html/index.html ~/Desktop
+# ローカル⇒リモート
+scp -i ~/.ssh/FirstKey.pem ~/Desktop/index.html ec2-user@52.197.121.79:
+# ディレクトリ書込み権限管理
+sudo groupadd www
+sudo usermod -a -G www ec2-user
