@@ -1,5 +1,0 @@
-﻿import json
-
-json loads　デコード 　 復号    str - dict
-json dumps　エンコード　符号化  dict - str
-json dump　 ファイル書き出し

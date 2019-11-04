@@ -1,0 +1,144 @@
+# JSONをCSVに変換する
+
+  #pandasをインポート
+  import pandas as pd
+
+  #変換したいJSONファイルを読み込む
+  df = pd.read_json("hogehoge.json")
+
+  #CSVに変換して任意のファイル名で保存
+  df.to_csv("hogehoge.csv")
+
+# ログをファイルに書き出す(loggingモジュール)
+
+
+  全体の流れ
+  １　ログをファイルに書き出す
+  ２　ログファイルの中身をメールする
+
+  １．標準出力の内容をログファイルに書き出す
+
+  例）１秒ごとにprint("Hello")と出力するコード
+
+  import time
+  while True:
+
+    print("Hello!")
+    time.sleep(1)
+
+  *これをlogginモジュールを使って書き直すと
+
+  import time
+
+  from logging import getLogger,Formatter,StreamHandler,FileHandler,INFO
+
+  logger = getLogger(__name__)
+  handlerSh = StreamHandler()
+  handlerFile = FileHandler("c:/Pydoc/helloBot.log") # ログファイルの出力先とファイル名を指定
+  handlerSh.setLevel(INFO)
+  handlerFile.setLevel(INFO)
+  logger.setLevel(INFO)
+  logger.addHandler(handlerSh)
+  logger.addHandler(handlerFile)
+
+  while True:
+
+    logger.info("Hello!")
+    time.sleep(1)
+
+
+  ○２行目から１０行目まで、「おまじない」
+  ○print("Hello") →　logger.info("Hello")
+
+  ◎コマンドラインに「Hello」が出力されると、同時に指定したフォルダにログファイルも出力される
+  ◎コマンドラインと同じ内容が、ログファイルにも出力される
+
+# ログファイルをメールする(Gmail)
+
+  
+  Gメールを送信するpythonコード
+
+  import smtplib
+  from email.message import EmailMessage
+  from datetime import datetime
+
+  with open( "helloBot.log" ) as file:   # さっきのログファイルを指定して読み込み
+    msg = EmailMessage()
+    msg.set_content(file.read())
+
+  msg["Subject"] = "BOT稼働状況の通知：{}".format(datetime.now().strftime("%Y-%m-%d-%H-%M"))
+  msg["From"] = "xxxxxxxxxxxx@gmail.com"         # 送信元のアドレス
+  msg["To"] = "xxxxxxxxxxxx@gmail.com"           # 受け取りたいアドレス
+
+  server = smtplib.SMTP("smtp.gmail.com",587)    # これはGmailのSMTPなら共通
+  server.starttls()
+  server.login("Account", "PassWord")            # Gmailのアカウント名とパスワード
+  server.sendmail( msg["From"],msg["To"],msg.as_string() )
+  server.close()
+
+# try~exceptによる対外処理
+
+    try 〜 except文の基本的な使い方
+    
+    try:
+        # 処理１
+    
+    except #例外型 ：
+        # 処理２
+    
+    例）入力した数値が整数であればそのまま出力、整数でない場合は再度入力を促す動作をする
+    
+    while True:
+         try:                                           #(1)
+             n = int(input())
+         except ValueError:                             #(2)
+             print('enter again')
+         except KeyboardInterrupt:                      #(3)
+             print('end')
+             break
+         else:                                          #(4)
+             print('number {}'.format(n))
+             break
+    
+    ○ひとつのtry節に対しexcept節を複数付けて別々の例外に対応することが可能。
+    ○else節を設けることが可能で、以下の特徴があります。
+    　・try節で例外が全く送出されなかった場合に実行される
+    　・全てのexcept節の後ろに置かれる
+    
+# whileTrue(無限ループ)
+
+     while文は「ある条件を満たす間(Trueの間）、指定の処理を繰り返す」
+
+    ○無限ループは必ずbreak（中断条件）とセットで使います
+
+    例）
+    num = 0
+
+    while True:
+        print(num)
+        num += 1
+        if num == 6:
+            break   
+    
+    
+# 例外処理
+
+     - 簡単にいうと「サーバーエラー」対策
+     - プログラミングコードに問題がなくても外部サーバーが原因でとまってしまう
+    
+    
+    例外処理の基本的な書き方
+    
+    try:
+    	#リクエスト通信
+    except 例外名 as e:
+    	#エラーが返ってきたときの処理   
+    
+    
+    
+    
+    
+    
+    
+    
+    
