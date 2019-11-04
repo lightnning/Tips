@@ -1,7 +1,0 @@
-# ---------- 基本形 -------------------
-# どのディレクトリかを問わず、sample.fileを除外
-# sample.file
-# .gitignore が置かれたディレクトリ内のsample.fileを除外
-# /sample.file
-
-/g00_.txt

@@ -1,3 +1,0 @@
-﻿git reset HEAD .
-または
-git reset .

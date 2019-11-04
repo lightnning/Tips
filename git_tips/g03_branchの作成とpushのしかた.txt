@@ -1,8 +1,0 @@
-﻿branch①ブランチの一覧を見る
-　git branch -a
-ブランチを作る元のブランチに切り替える
-  git checkout master
-ブランチを作成
-  git checkout -b 作成するブランチ名
-ブランチをリモートに登録
-  git push -u origin 作成したブランチ名
