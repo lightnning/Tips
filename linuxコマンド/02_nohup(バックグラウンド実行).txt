@@ -1,5 +1,0 @@
-﻿書式
-nohup コマンド &
-
-例）
-nohup python test.py &

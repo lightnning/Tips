@@ -1,0 +1,166 @@
+# 2台のPCでgitを使う場合
+
+    1. はじめに1台からGitHubにPushします
+    2. もう一台で使う場合はまず git clone します
+    3. ブランチを使用して、それぞれのPCからGitHubにPushします。そしてプルリクエストを作成してmasterにマージします
+    ※このようにすると、それぞれのパソコンで別々に作業することができます
+    4. 別のパソコンで開発を再開する場合は、git pull して、GitHubの状態とPCの状態を同じにします。その後は3の手順で開発します
+
+# git merge覚え
+
+    例えば
+    1 master ブランチでファイルの内容を変更する
+    2 master branch で　add .　→　commit　→　push をする
+    3 remoto repository のmasterに反映される
+
+    その変更内容をfeature branchにも反映させる場合
+    1 ブランチをfeatureに変える
+      checkout feature
+    2 mergeコマンドでmasterの内容をfatureにmergeする
+    　git merge origin master
+    3 featureブランチからgit push origin featureをすると
+    　remote のfeatureブランチも書き換わる
+
+# git branch ローカルブランチの確認
+
+    削除コマンド
+    $ git branch --delete ブランチ名
+    $ git branch --d　ブランチ名
+    ＊マージ済みのブランチのみ削除できる
+
+    削除コマンド２
+    $ git branch -D [ブランチ名]
+    *どんなローカルブランチも削除する
+
+# git fetch --prune
+
+    rocal_branchを最新(remote)と一緒にする
+
+# git fetch リモートブランチをローカルに取り入れる
+
+    git fetch
+    git checkout branch_name
+
+# リモートブランチを削除する
+
+    git push --delete origin 
+    
+# branchの作成とpushのしかた
+
+    branch①ブランチの一覧を見る
+    git branch -a
+    ブランチを作る元のブランチに切り替える
+    git checkout master
+    ブランチを作成
+    git checkout -b 作成するブランチ名
+    ブランチをリモートに登録
+    git push -u origin 作成したブランチ名
+
+# ブランチ名の変更(rocal,remote)
+
+  1.ローカルのブランチ名を変更する
+  $ git branch -m hoge fuga
+  ※現在使用しているブランチ名を変更する場合は下記でOK
+  $ git branch -m fuga
+
+  2.リモートのブランチを削除
+  $ git push origin :hoge
+
+  3.ブランチ名を変更したロー
+  カルブランチをプッシュ
+  $ git push origin fuga 
+
+# git crone
+
+    URLは、GitHubのcloneしたいリポジトリページの
+    右上の緑色のボタン(Clone or download)を
+    クリックする。
+    urlが表示されるので、それをコピーする。
+    git clone [URL]
+
+# git add を取り消す
+
+    git reset HEAD .
+    または
+    git reset .
+
+# git checkout ローカルの変更をもとに戻す
+
+    git checkout <filename>
+    特定のファイルではなく、全て戻したい場合
+    git checkout .
+
+# 新規リポジトリの作成
+
+    github上で新規リポジトリを作成
+    →　＋New repository
+    Repository name 入力
+    Description　入力
+    →　Create repository
+
+    対象ディレクトリに移動
+    git init 
+    git add -A  (-Aは-allと同じ意味)
+    git commit -m "メッセージ"
+    git remote add origin [URL:リモートリポジトリ情報]
+    //ローカルリポジトリの内容をリモートリポジトリに反映する
+    git push -u origin master
+    [username]、[password]を認証する
+
+# リモートリポジトリの名前の変更
+
+    githubを開く
+    変更するリポジトリを選択
+    setting タグを選択
+    repository　の名前を入力するところがあるので
+    新しい名前を入力し、その隣のrenameボタンを押す
+
+# gitignore の書き方
+
+    参考
+    http://www-creators.com/archives/1662
+
+    「#」はコメントアウト
+
+    *注意点
+    # すでに一度 git add を経験したファイルは、インデックスに追加され、Git 追跡対象になっている
+    # すでに追跡されているファイルを Git の追跡対象から除外する
+    # インデックスからのみファイルを削除する（追跡対象からはずす）
+    git rm --cached <FILE_NAME>
+
+    .gitignoreの書き方
+
+    # 基本形
+    # どのディレクトリかを問わず、sample.fileを除外
+    sample.file
+    # .gitignore が置かれたディレクトリ内のsample.fileを除外
+    /sample.file
+
+    # 特定のディレクトリを追跡対象から除外する
+    # 文字列マッチが見つかるパスを除外する
+    directory-a
+    # ディレクトリ配下（のすべてのパスを）除外する
+    directory-a/ 
+
+    # ワイルドカードの利用
+    *.log
+    *.csv
+    *.json
+
+
+    # 特定のファイルだけ追跡する
+
+    # 特定のディレクトリ内のファイルだけを追跡する
+
+    # 特定の拡張子を無視する
+    *.jpg
+    *.png
+
+
+
+      
+
+
+
+
+

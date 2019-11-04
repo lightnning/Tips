@@ -1,15 +1,15 @@
-git merge‚Ìg‚¢•û
+ï»¿git mergeã®ä½¿ã„æ–¹
 
-—á‚¦‚Î
-‡@master ƒuƒ‰ƒ“ƒ`‚Åƒtƒ@ƒCƒ‹‚Ì“à—e‚ğ•ÏX‚·‚é
-‡Amaster branch ‚Å@add .@¨@commit@¨@push ‚ğ‚·‚é
-‡Bremoto repository ‚Ìmaster‚É”½‰f‚³‚ê‚é
+ä¾‹ãˆã°
+1 master ãƒ–ãƒ©ãƒ³ãƒã§ãƒ•ã‚¡ã‚¤ãƒ«ã®å†…å®¹ã‚’å¤‰æ›´ã™ã‚‹
+2 master branch ã§ã€€add .ã€€â†’ã€€commitã€€â†’ã€€push ã‚’ã™ã‚‹
+3 remoto repository ã®masterã«åæ˜ ã•ã‚Œã‚‹
 
 
-‚»‚Ì•ÏX“à—e‚ğfeature branch‚É‚à”½‰f‚³‚¹‚éê‡
-‡@ƒuƒ‰ƒ“ƒ`‚ğfeature‚É•Ï‚¦‚é
+ãã®å¤‰æ›´å†…å®¹ã‚’feature branchã«ã‚‚åæ˜ ã•ã›ã‚‹å ´åˆ
+1 ãƒ–ãƒ©ãƒ³ãƒã‚’featureã«å¤‰ãˆã‚‹
   checkout feature
-‡AmergeƒRƒ}ƒ“ƒh‚Åmaster‚Ì“à—e‚ğfature‚Émerge‚·‚é
-@git merge origin master
-‡Bfeatureƒuƒ‰ƒ“ƒ`‚©‚çgit push origin feature‚ğ‚·‚é‚Æ
-@remote ‚Ìfeatureƒuƒ‰ƒ“ƒ`‚à‘‚«Š·‚í‚é
+2 mergeã‚³ãƒãƒ³ãƒ‰ã§masterã®å†…å®¹ã‚’fatureã«mergeã™ã‚‹
+ã€€git merge origin master
+3 featureãƒ–ãƒ©ãƒ³ãƒã‹ã‚‰git push origin featureã‚’ã™ã‚‹ã¨
+ã€€remote ã®featureãƒ–ãƒ©ãƒ³ãƒã‚‚æ›¸ãæ›ã‚ã‚‹
