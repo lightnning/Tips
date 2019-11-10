@@ -1,0 +1,19 @@
+# 不要なログイン履歴を削除する
+
+    cd /c/'Program Files (x86)'/teraterm/
+    vi TERATERM.INI
+    最下行あたり
+    -例-
+    [Hosts]
+    Host1=ns.sing.ne.jp
+    Host10=myhost.example.com
+    Host12=[2001:db8:1:2:8401:2ff:fe03:405]
+    Host13=[fe80::8401:2ff:fe03:405%3]
+    Host14=myhost.example.com /F=myhost.ini
+    Host15=user@myhost.example.com:10022 /ssh
+    
+    不要な行を削除する
+
+# 履歴をわかりやすくする
+
+    /w=ウインドウスタイル
