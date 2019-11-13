@@ -1,7 +1,11 @@
 # 不要なログイン履歴を削除する
 
     cd /c/'Program Files (x86)'/teraterm/
+    または
+    cd mnt/c/'Program Files (x86)'/teraterm/ 
+
     vi TERATERM.INI
+    
     最下行あたり
     -例-
     [Hosts]
