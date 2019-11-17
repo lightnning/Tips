@@ -156,6 +156,121 @@
     *.jpg
     *.png
 
+# g01_PC2台の場合のGitの使い方
+    2台ある場合は、
+    1. はじめに1台からGitHubにPushします
+    2. もう一台で使う場合はまず git clone します
+    3. ブランチを使用して、それぞれのPCからGitHubにPushします。そしてプルリクエストを作成してmasterにマージします
+    ※このようにすると、それぞれのパソコンで別々に作業することができます
+    4. 別のパソコンで開発を再開する場合は、git pull して、GitHubの状態とPCの状態を同じにします。その後は3の手順で開発します
+
+# g02_git_merge覚え
+    ##git mergeの使い方
+    ##例えば
+    ①master ブランチでファイルの内容を変更する
+    ②master branch で　add .　→　commit　→　push をする
+    ③remoto repository のmasterに反映される
+    ##その変更内容をfeature branchにも反映させる場合
+    ①ブランチをfeatureに変える
+    checkout feature
+    ②mergeコマンドでmasterの内容をfatureにmergeする
+    　git merge origin master
+    ③featureブランチからgit push origin featureをすると
+    　remote のfeatureブランチも書き換わる
+
+# g03_branchの作成とpushのしかた
+    ①ブランチの一覧を見る
+    　git branch -a
+    ②ブランチを作る元のブランチに切り替える
+    git checkout master
+    ③ブランチを作成
+    git checkout -b 作成するブランチ名
+    ④ブランチをリモートに登録
+    git push -u origin 作成したブランチ名
+
+# g04_rocal_branchを最新(remoteと一緒)にする--prune
+    git fetch --prune
+
+# g05_リモートブランチを削除する
+    git push --delete origin ブランチ名
+
+# g06_リモートブランチをローカルに取りいれる
+    git fetch
+    git checkout branch_name
+
+# g07_ローカルブランチの削除
+    git branch
+
+    削除コマンド
+    git branch --delete ブランチ名
+    git branch --d　ブランチ名
+    ＊マージ済みのブランチのみ削除できる
+
+    削除コマンド２
+    git branch -D [ブランチ名]
+    *どんなローカルブランチも削除する
+
+# g08_ブランチ名の変更(rocal,remote)
+    ブランチ名をhogeからfugaに変更する
+    1.ローカルのブランチ名を変更する
+    $ git branch -m hoge fuga
+    ※現在使用しているブランチ名を変更する場合は下記でOK
+    $ git branch -m fuga
+
+    2.リモートのブランチを削除
+    $ git push origin :hoge
+
+    3.ブランチ名を変更したローカルブランチをプッシュ
+    $ git push origin fuga
+
+# g09_git cloneする
+    URLは、GitHubのcloneしたいリポジトリページの
+    右上の緑色のボタン(Clone or download)のUse HTTPSを
+    クリックすれば表示されるので、それをコピーする。
+    git clone URL
+
+# g10_git_addを取り消す
+    git reset HEAD .
+    または
+    git reset .
+
+# g11_ローカルの変更を元に戻す(git checkout)
+    git checkout <filename>
+    特定のファイルではなく、全て戻したい場合
+    git checkout .
+
+# g12_新規リポジトリの作成
+    ##ルートディレクトリに移動
+    git init 打ち込み
+    git add -A  (-Aは-allと同じ意味)
+    git commit -m メッセージ
+
+    ##github上で新規リポジトリを作成
+    ＋　New repository
+    Repository name 入力
+    Description　入力
+
+    ##コマンドプロンプトに移動
+    git remote add origin [URL:リモートリポジトリ情報]
+
+    ##ローカルリポジトリの内容をリモートリポジトリに反映する
+    git push origin master
+
+
+# g13_リモートリポジトリの名前の変更
+    githubを開く
+    変更するリポジトリを選択
+    setting タグを選択
+    repository　の名前を入力するところがあるので
+    新しい名前を入力し、その隣のrenameボタンを押す
+
+
+# 
+# 
+# 
+
+
+
 
 
       
